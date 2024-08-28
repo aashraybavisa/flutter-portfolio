@@ -8,8 +8,5 @@ const List<Skill> skills = [
   Skill(skill: 'Android', percentage: 80),
   Skill(skill: 'Kotlin', percentage: 85),
   Skill(skill: 'JavaScript', percentage: 90),
-  Skill(skill: 'Python', percentage: 70),
-  Skill(skill: 'Java', percentage: 75),
   Skill(skill: 'React.js', percentage: 80),
-  Skill(skill: 'Dart', percentage: 80),
 ];

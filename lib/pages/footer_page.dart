@@ -16,143 +16,132 @@ class FooterPage extends StatelessWidget {
         desktop: _buildUi(desktopMaxWidth, context),
       );
 
-  Widget _buildUi(double width, BuildContext context) => Center(
-        heightFactor: width > 1200 ? 1 : 2,
-        child: ResponsiveWrapper(
-          maxWidth: width,
-          minWidth: width,
-          defaultScale: false,
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 40,
-                      bottom: 40,
-                    ),
-                    child: Wrap(
-                      spacing: ScreenHelper.isMobile(context)
-                          ? 0
-                          : constraints.maxWidth * .05,
-                      runSpacing: ScreenHelper.isMobile(context)
-                          ? 0
-                          : constraints.maxWidth * .05,
-                      children: footerItems
-                          .map(
-                            (footerItem) => InkWell(
-                              onTap: () {
-                                Utils.launchURL(footerItem.link);
-                              },
-                              hoverColor: Colors.transparent,
-                              child: SizedBox(
-                                height: 120,
-                                width: ScreenHelper.isMobile(context)
-                                    ? constraints.maxWidth * .5
-                                    : constraints.maxWidth * .2,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+  Widget _buildUi(double width, BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height, // Full height of the screen
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment
+            .spaceBetween, // Ensures footer stays at the bottom
+        children: [
+          Expanded(
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 40), // Adjusted horizontal padding
+                child: Wrap(
+                  spacing: ScreenHelper.isMobile(context) ? 0 : width * .05,
+                  runSpacing: ScreenHelper.isMobile(context) ? 0 : width * .05,
+                  children: footerItems
+                      .map(
+                        (footerItem) => InkWell(
+                          onTap: () {
+                            Utils.launchURL(footerItem.link);
+                          },
+                          hoverColor: Colors.transparent,
+                          child: SizedBox(
+                            height: 120,
+                            width: ScreenHelper.isMobile(context)
+                                ? width * .5
+                                : width * .2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Image.asset(footerItem.iconPath,
-                                            color: primaryColor, width: 25),
-                                        const SizedBox(width: 15),
-                                        Text(
-                                          footerItem.title,
-                                          style: GoogleFonts.oswald(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w700,
-                                            color: brightColor,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    const SizedBox(height: 15),
-                                    RichText(
-                                      textAlign: TextAlign.center,
-                                      text: TextSpan(
-                                        children: [
-                                          TextSpan(
-                                            text: '${footerItem.text1}\n',
-                                            style: const TextStyle(
-                                              color: captionColor,
-                                              height: 1.8,
-                                            ),
-                                          )
-                                        ],
+                                    Image.asset(footerItem.iconPath,
+                                        color: primaryColor, width: 25),
+                                    const SizedBox(width: 15),
+                                    Text(
+                                      footerItem.title,
+                                      style: GoogleFonts.oswald(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700,
+                                        color: brightColor,
                                       ),
                                     )
                                   ],
                                 ),
-                              ),
+                                const SizedBox(height: 15),
+                                RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: '${footerItem.text1}\n',
+                                        style: const TextStyle(
+                                          color: captionColor,
+                                          height: 1.8,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
                             ),
-                          )
-                          .toList(),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  Flex(
-                    direction: ScreenHelper.isMobile(context)
-                        ? Axis.vertical
-                        : Axis.horizontal,
-                    mainAxisAlignment: ScreenHelper.isMobile(context)
-                        ? MainAxisAlignment.center
-                        : MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.only(bottom: 8),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ),
+              ),
+            ),
+          ),
+          // Footer section with Copyright and T&C
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal:
+                    16), // Maintains horizontal padding for the footer as well
+            child: Column(
+              children: [
+                const Text(
+                  copyrightText,
+                  style: TextStyle(color: captionColor),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Utils.launchURL(privacyLink);
+                      },
+                      child: const MouseRegion(
+                        cursor: SystemMouseCursors.click,
                         child: Text(
-                          copyrightText,
+                          'Privacy Policy',
                           style: TextStyle(color: captionColor),
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Utils.launchURL(privacyLink);
-                            },
-                            child: const MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Text(
-                                'Privacy Policy',
-                                style: TextStyle(color: captionColor),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: const Text(
-                              '|',
-                              style: TextStyle(color: captionColor),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Utils.launchURL(tncLink);
-                            },
-                            child: const MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Text(
-                                'Terms & Condition',
-                                style: TextStyle(color: captionColor),
-                              ),
-                            ),
-                          )
-                        ],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      child: const Text(
+                        '|',
+                        style: TextStyle(color: captionColor),
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 16)
-                ],
-              );
-            },
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Utils.launchURL(tncLink);
+                      },
+                      child: const MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: Text(
+                          'Terms & Conditions',
+                          style: TextStyle(color: captionColor),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+              ],
+            ),
           ),
-        ),
-      );
+        ],
+      ),
+    );
+  }
 }

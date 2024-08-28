@@ -19,7 +19,7 @@ class DrawerWidget extends StatelessWidget {
             return ListTile(
               title: Text(
                 headerItems[index].title,
-                style: const TextStyle(color: brightColor),
+                style: TextStyle(color: headerItems[index].color),
               ),
               onTap: () {
                 itemController.scrollTo(
