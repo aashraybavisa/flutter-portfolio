@@ -18,7 +18,9 @@ class FooterPage extends StatelessWidget {
 
   Widget _buildUi(double width, BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height, // Full height of the screen
+      height: ScreenHelper.isMobile(context)
+          ? MediaQuery.of(context).size.height
+          : MediaQuery.of(context).size.height / 2, // Full height of the screen
       child: Column(
         mainAxisAlignment: MainAxisAlignment
             .spaceBetween, // Ensures footer stays at the bottom

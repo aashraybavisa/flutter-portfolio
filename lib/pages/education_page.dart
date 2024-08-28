@@ -16,7 +16,7 @@ class EducationPage extends StatelessWidget {
       );
 
   Widget _buildUi(double width, BuildContext context) => SizedBox(
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height / 2,
         child: Padding(
           padding: const EdgeInsets.only(top: 100),
           child: ResponsiveWrapper(
