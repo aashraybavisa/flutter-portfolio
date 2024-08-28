@@ -36,7 +36,7 @@ class FooterPage extends StatelessWidget {
                       .map(
                         (footerItem) => InkWell(
                           onTap: () {
-                            Utils.launchURL(footerItem.link);
+                            Utils.launchLink(footerItem.link);
                           },
                           hoverColor: Colors.transparent,
                           child: SizedBox(
@@ -105,7 +105,7 @@ class FooterPage extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Utils.launchURL(privacyLink);
+                        Utils.launchLink(privacyLink);
                       },
                       child: const MouseRegion(
                         cursor: SystemMouseCursors.click,
@@ -124,7 +124,7 @@ class FooterPage extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Utils.launchURL(tncLink);
+                        Utils.launchLink(tncLink);
                       },
                       child: const MouseRegion(
                         cursor: SystemMouseCursors.click,

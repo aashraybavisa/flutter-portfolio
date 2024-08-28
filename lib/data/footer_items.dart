@@ -7,14 +7,14 @@ const List<FooterItem> footerItems = [
     title: 'PHONE',
     text1: phone1,
     text2: '',
-    link: 'tel:$phone1',
+    link: phoneLink,
   ),
   FooterItem(
     iconPath: 'assets/email.png',
     title: 'EMAIL',
     text1: email1,
     text2: '',
-    link: 'mailto:$email1',
+    link: emailLink,
   ),
   FooterItem(
     iconPath: 'assets/linkedin.png',

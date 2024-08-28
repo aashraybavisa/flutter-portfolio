@@ -108,7 +108,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           const SizedBox(height: 30),
                           ElevatedButton(
                               onPressed: () {
-                                Utils.launchURL(resumeLink);
+                                Utils.launchLink(resumeLink);
                               },
                               style: ElevatedButton.styleFrom(
                                 side: const BorderSide(
