@@ -52,7 +52,8 @@ class DesktopTabBar extends StatelessWidget {
   final TopBarContents widget;
   final ItemScrollController? itemsScrollController;
 
-  InkWell menuItem({required int toPage, required String title, required Color color}) {
+  InkWell menuItem(
+      {required int toPage, required String title, required Color color}) {
     return InkWell(
       onTap: () => itemsScrollController?.scrollTo(
         index: toPage,
@@ -129,14 +130,10 @@ class HeaderLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(left: 30, right: 10),
-        child: RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(text: name.characters.first, style: style),
-              TextSpan(text: '.', style: style),
-            ],
-          ),
-        ),
-      );
+      padding: const EdgeInsets.only(left: 10, right: 10),
+      child: Image.asset(
+        'assets/192.png',
+        color: primaryColor,
+        fit: BoxFit.contain,
+      ));
 }
