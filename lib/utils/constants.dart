@@ -46,4 +46,4 @@ const github = 'Aashray Bavisa';
 const whatsappLink = 'https://wa.me/5198578369';
 const tncLink = "https://www.wix.com/about/terms-of-use";
 const privacyLink = "https://www.wix.com/about/privacy";
-const copyrightText = "Copyright \u00a9 2024 $name. All right Reserved.";
+const copyrightText = "Copyright \u00a9 2024 $name. All rights reserved.";

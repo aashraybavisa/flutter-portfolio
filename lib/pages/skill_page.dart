@@ -137,7 +137,7 @@ class SkillPage extends StatelessWidget {
                       : Axis.horizontal,
                   children: [
                     Expanded(
-                      flex: 2,
+                      flex: ScreenHelper.isMobile(context) ? 0 : 3,
                       child: Lottie.asset(
                         'assets/animation/skills.json',
                         width: constraints.maxWidth *
@@ -148,7 +148,7 @@ class SkillPage extends StatelessWidget {
                     ),
                     const SizedBox(width: 40),
                     Expanded(
-                      flex: 4,
+                      flex: ScreenHelper.isMobile(context) ? 0 : 3,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,

@@ -26,7 +26,7 @@ class _WelcomePageState extends State<WelcomePage> {
         tablet: _buildUi(tabletMaxWidth),
         mobile: _buildUi(ScreenHelper.mobileMaxWidth(context)),
       );
-  _buildUi(double width) => Container(
+  _buildUi(double width) => SizedBox(
         height: MediaQuery.of(context).size.height,
         child: Center(
           child: LayoutBuilder(
