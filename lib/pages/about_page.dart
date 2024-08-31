@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio_app/utils/constants.dart';
 import 'package:portfolio_app/utils/screen_helper.dart';
@@ -21,61 +22,56 @@ class AboutPage extends StatelessWidget {
 Widget _buildUi(double width, BuildContext context) => SizedBox(
       height: MediaQuery.of(context).size.height,
       child: Center(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            const style = TextStyle(color: brightColor, fontSize: 20);
-
-            return ResponsiveWrapper(
-              maxWidth: width,
-              minWidth: width,
-              defaultScale: false,
-              child: Flex(
-                direction: ScreenHelper.isMobile(context)
-                    ? Axis.vertical
-                    : Axis.horizontal,
-                children: [
-                  Expanded(
-                    flex: 3,
-                    child: Lottie.asset(
-                      'assets/animation/coder.json',
-                      width: 500,
-                      height: constraints.maxHeight *
-                          0.5, // Added height for better control
+        child: LayoutBuilder(builder: (context, constraints) {
+          const style = TextStyle(color: brightColor, fontSize: 20);
+          return Expanded(
+            child: ResponsiveWrapper(
+                maxWidth: width,
+                minWidth: width,
+                child: Flex(
+                  direction: ScreenHelper.isMobile(context)
+                      ? Axis.vertical
+                      : Axis.horizontal,
+                  children: [
+                    Expanded(
+                      flex: ScreenHelper.isMobile(context) ? 0 : 3,
+                      child: Lottie.asset(
+                        'assets/animation/coder.json',
+                        width: 500,
+                      ),
                     ),
-                  ),
-                  const SizedBox(width: 40),
-                  Expanded(
-                    flex: 4,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'ABOUT',
-                          style: GoogleFonts.oswald(
-                            color: brightColor,
-                            fontWeight: FontWeight.w900,
-                            fontSize: 30,
-                            height: 1.3,
+                    const SizedBox(width: 40),
+                    Expanded(
+                      flex: ScreenHelper.isMobile(context) ? 0 : 4,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'ABOUT',
+                            style: GoogleFonts.oswald(
+                              color: brightColor,
+                              fontWeight: FontWeight.w900,
+                              fontSize: 30,
+                              height: 1.3,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          aboutFirst,
-                          style: style,
-                        ),
-                        const Text(
-                          aboutSecond,
-                          style: style,
-                        ),
+                          const SizedBox(height: 5),
+                          const Text(
+                            aboutFirst,
+                            style: style,
+                          ),
+                          const Text(
+                            aboutSecond,
+                            style: style,
+                          ),
                         const SizedBox(height: 5)
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            );
-          },
-        ),
+                  ],
+                )),
+          );
+        }),
       ),
     );

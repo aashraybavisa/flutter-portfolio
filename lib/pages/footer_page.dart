@@ -91,54 +91,54 @@ class FooterPage extends StatelessWidget {
             ),
           ),
           // Footer section with Copyright and T&C
-          Padding(
+          const Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal:
                     16), // Maintains horizontal padding for the footer as well
             child: Column(
               children: [
-                const Text(
+                Text(
                   copyrightText,
                   style: TextStyle(color: captionColor),
                 ),
-                const SizedBox(height: 8),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Utils.launchLink(privacyLink);
-                      },
-                      child: const MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: Text(
-                          'Privacy Policy',
-                          style: TextStyle(color: captionColor),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: const Text(
-                        '|',
-                        style: TextStyle(color: captionColor),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Utils.launchLink(tncLink);
-                      },
-                      child: const MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: Text(
-                          'Terms & Conditions',
-                          style: TextStyle(color: captionColor),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     GestureDetector(
+                //       onTap: () {
+                //         Utils.launchLink(privacyLink);
+                //       },
+                //       child: const MouseRegion(
+                //         cursor: SystemMouseCursors.click,
+                //         child: Text(
+                //           'Privacy Policy',
+                //           style: TextStyle(color: captionColor),
+                //         ),
+                //       ),
+                //     ),
+                //     Container(
+                //       padding: const EdgeInsets.symmetric(horizontal: 8),
+                //       child: const Text(
+                //         '|',
+                //         style: TextStyle(color: captionColor),
+                //       ),
+                //     ),
+                //     GestureDetector(
+                //       onTap: () {
+                //         Utils.launchLink(tncLink);
+                //       },
+                //       child: const MouseRegion(
+                //         cursor: SystemMouseCursors.click,
+                //         child: Text(
+                //           'Terms & Conditions',
+                //           style: TextStyle(color: captionColor),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                // const SizedBox(height: 16),
               ],
             ),
           ),

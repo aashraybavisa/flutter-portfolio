@@ -2,7 +2,7 @@ import 'package:portfolio_app/models/education.dart';
 
 const List<Education> educations = [
   Education(
-    description: 'PG Certificate in Mobile Application Development',
+    description: 'PG in Mobile Application Development',
     college: 'Fanshawe College, Ontario, Canada',
     linkName: 'heyflutter.com',
     period: '2023 - 2024',
