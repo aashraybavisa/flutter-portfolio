@@ -165,7 +165,7 @@ class SkillPage extends StatelessWidget {
                           const SizedBox(height: 12),
                           const Text(
                             skill,
-                            style: TextStyle(color: captionColor, fontSize: 20),
+                            style: TextStyle(color: brightColor, fontSize: 20),
                           ),
                           const SizedBox(height: 16),
                           Column(
@@ -183,7 +183,13 @@ class SkillPage extends StatelessWidget {
                                             alignment: Alignment.centerLeft,
                                             height: 38,
                                             color: brightColor,
-                                            child: Text(skill.skill),
+                                            child: Text(
+                                              skill.skill,
+                                              style: const TextStyle(
+                                                color: backgroundColor,
+                                                fontSize: 16,
+                                              ),
+                                            ),
                                           ),
                                         ),
                                         const SizedBox(width: 12),

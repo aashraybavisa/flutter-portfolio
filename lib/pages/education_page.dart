@@ -36,8 +36,8 @@ class EducationPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
-                Wrap(
-                  children: const [
+                const Wrap(
+                  children:[
                     Text(
                       education,
                       style: TextStyle(color: brightColor, fontSize: 20),
@@ -69,18 +69,18 @@ class EducationPage extends StatelessWidget {
                                     maxLines: 4,
                                     overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(
-                                      color: captionColor,
+                                      color: brightColor,
                                       fontSize: 20,
                                     ),
                                   ),
-                                  const SizedBox(height: 20),
+                                  const SizedBox(height: 10),
                                   GestureDetector(
                                     // onTap: () =>
                                     //     Utils.launchURL(education.linkName),
                                     child: Text(
                                       education.college,
                                       style: const TextStyle(
-                                        color: brightColor,
+                                        color: captionColor,
                                         fontSize: 16,
                                       ),
                                     ),

@@ -11,7 +11,7 @@ const tabletMaxWidth = 760.0;
 
 const name = 'Aashray Bavisa';
 const resumeLink =
-    'https://drive.google.com/file/d/1klDnasIHVu6oG8KEPd5mLYhRmpTIRcPl/view';
+    'https://drive.google.com/file/d/1xH76pG0dyFIDcK32GV0c8lUsy0uWrJGr/view';
 const profileImage = 'assets/profile.jpg';
 const googlePlay = 'assets/GooglePlay.png';
 const appStore = 'assets/AppStore.png';

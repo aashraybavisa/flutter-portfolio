@@ -32,20 +32,20 @@ class FooterPage extends StatelessWidget {
                     horizontal: 16,
                     vertical: 40), // Adjusted horizontal padding
                 child: Wrap(
-                  spacing: ScreenHelper.isMobile(context) ? 0 : width * .05,
-                  runSpacing: ScreenHelper.isMobile(context) ? 0 : width * .05,
+                  spacing: 0,// ScreenHelper.isMobile(context) ? 0 : width * .05,
+                  runSpacing: 0, // ScreenHelper.isMobile(context) ? 0 : width * .05,
                   children: footerItems
                       .map(
                         (footerItem) => InkWell(
                           onTap: () {
                             Utils.launchLink(footerItem.link);
                           },
-                          hoverColor: Colors.transparent,
+                          hoverColor: captionColor,
                           child: SizedBox(
                             height: 120,
                             width: ScreenHelper.isMobile(context)
                                 ? width * .5
-                                : width * .2,
+                                : width * .4,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -53,7 +53,7 @@ class FooterPage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset(footerItem.iconPath,
-                                        color: primaryColor, width: 25),
+                                        color: captionColor, width: 25),
                                     const SizedBox(width: 15),
                                     Text(
                                       footerItem.title,
@@ -73,7 +73,7 @@ class FooterPage extends StatelessWidget {
                                       TextSpan(
                                         text: '${footerItem.text1}\n',
                                         style: const TextStyle(
-                                          color: captionColor,
+                                          color: primaryColor,
                                           height: 1.8,
                                         ),
                                       )

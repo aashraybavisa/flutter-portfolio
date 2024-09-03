@@ -196,7 +196,7 @@ class ProjectsPage extends StatelessWidget {
                                 maxLines: 4,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  color: captionColor,
+                                  color: brightColor,
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                 ),
