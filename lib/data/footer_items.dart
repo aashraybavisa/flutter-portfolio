@@ -16,13 +16,13 @@ const List<FooterItem> footerItems = [
     text2: '',
     link: emailLink,
   ),
-  FooterItem(
-    iconPath: 'assets/linkedin.png',
-    title: 'LINKEDIN',
-    text1: linkedIn,
-    text2: '',
-    link: linkedinLink,
-  ),
+  // FooterItem(
+  //   iconPath: 'assets/linkedin.png',
+  //   title: 'LINKEDIN',
+  //   text1: linkedIn,
+  //   text2: '',
+  //   link: linkedinLink,
+  // ),
   FooterItem(
     iconPath: 'assets/github.png',
     title: 'GITHUB',
