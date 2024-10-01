@@ -87,9 +87,9 @@ class _WelcomePageState extends State<WelcomePage> {
                                   child: AnimatedTextKit(
                                     repeatForever: true,
                                     animatedTexts: [
-                                      RotateAnimatedText('Passionate'),
-                                      RotateAnimatedText('Creative'),
                                       RotateAnimatedText('Mobile Developer'),
+                                      RotateAnimatedText('Full Stack Developer'),
+                                      RotateAnimatedText('Web Developer'),
                                     ],
                                   ),
                                 )
