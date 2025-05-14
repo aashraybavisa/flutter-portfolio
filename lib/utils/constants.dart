@@ -19,15 +19,20 @@ const appStore = 'assets/AppStore.png';
 const helloTag = 'Hi there, Welcome to my showcase.';
 
 const miniDescription =
-    'Experienced in building and scaling mobile applications, delivering high-quality code, and leading cross-functional teams.';
-const aboutFirst =
-    'I am a skilled Mobile Application Developer with a strong background in various programming languages and frameworks. With a proven ability to deliver high-quality code on time, I excel at solving complex problems and collaborating with diverse teams.';
-const aboutSecond =
-    '\nCurrently, I work as a Team Leader at Tiez Interactive, where I focus on innovation and ensuring scalability. My commitment to continuous learning and staying updated with industry trends helps me lead by example and drive impactful results in every project I undertake.';
-const education =
-    'I went to school specializing in Mobile Application Development and also have a Bachelor\'s degree in Computer Science.';
+    'Mobile App Developer with a track record of building scalable apps, delivering clean code, and collaborating across teams to launch impactful products.';
 
-const skill = 'Expert Mobile Developer who offer more than just working apps.';
+const aboutFirst =
+    'I am a dedicated Mobile Application Developer with hands-on experience in React Native, Swift, Kotlin, and other modern frameworks. I’m passionate about crafting user-centric, high-performance mobile experiences and thrive in solving technical challenges while working with cross-functional teams.';
+
+const aboutSecond =
+    'Currently, I’m contributing to product innovation and scalable architecture as a Mobile App Developer at Barber-OS Technologies. I stay on top of emerging trends, constantly upskilling to ensure every solution I build is modern, maintainable, and impactful.';
+
+const education =
+    'I hold a Post-Graduate Certificate in Mobile Application Development and a Bachelor’s degree in Computer Engineering, combining practical skills with strong theoretical foundations.';
+
+const skill =
+    'Expert in mobile development, delivering not just apps—but robust, scalable, and user-first mobile solutions.';
+
 
 const address = 'Toronto, ON';
 const country = 'Canada';
